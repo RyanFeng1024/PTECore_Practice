@@ -1,0 +1,181 @@
+html {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: linear-gradient(to bottom right, #7A88FF, #7AFFAF);
+	overflow: hidden;
+}
+
+header a {
+	display: inline-block;
+	width: 120px;
+	border-radius: 10px;
+	text-decoration: none;
+	color: white;
+}
+
+header a:hover {
+	background-color: white;
+	color: #ff4f4f;
+	font-weight: bold;
+}
+
+.active {
+	font-weight: bold;
+	background-color: white;
+	color: #ff4f4f;
+}
+
+.container {
+	position: absolute;
+	max-height: 500px;
+	background: white;
+	margin: auto;
+	max-width: 750px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	box-shadow: 10px 10px 80px 2px lightslategray;
+	border-radius: 30px;
+}
+
+textarea {
+	width: 90%;
+	height: 100px;
+	resize: none;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.disc_title {
+	margin: 70px 50px;
+}
+
+.disc_title p {
+	margin: 5px;
+	font-size: 21px;
+	color: #778899;
+}
+
+.play_pause {
+	color: crimson;
+	position: absolute;
+	display: block;
+	margin: 10px auto;
+	width: 100%;
+	text-align: center;
+
+}
+
+.play_pause div {
+	width: 120px;
+	height: 120px;
+	display: inline-grid;
+	line-height: 120px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+
+}
+
+.buttons button {
+	display: inline-block;
+	width: 80px;
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	background: linear-gradient(rgb(8, 204, 166), rgb(1, 227, 183));
+	color: white;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+.love {
+	float: right;
+	margin-right: 40px;
+	color: red;
+	margin-top: -40px;
+	font-size: 26px;
+}
+
+.share {
+	float: right;
+	color: red;
+	margin-top: -40px;
+	font-size: 26px;
+}
+
+.lrc_btn {
+	width: 24px;
+	height: 24px;
+	font-size: 18px;
+	color: red;
+	float: right;
+	margin-top: -40px;
+	margin-right: 80px;
+	border: 1px solid red;
+	text-align: center;
+	line-height: 24px;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+button {
+	border: 0px;
+	color: rgba(255, 0, 0, .7);
+	background: transparent;
+	outline: none;
+	/* letter-spacing: .3em; */
+}
+
+.lrc {
+	display: none;
+	/*position: absolute;*/
+	width: 750px;
+	height: 400px;
+	overflow: hidden;
+}
+
+.lrc p {
+	color: #ff4f4f;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 200%;
+}
+
+select {
+	height: 30px;
+	line-height: 30px;
+	border-radius: 2px;
+}
+
+select option {
+	height: 30px;
+}
+
+.wfdid {
+	width: 60px;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	text-align: center;
+	color: white;
+}

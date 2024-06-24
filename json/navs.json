@@ -1,0 +1,52 @@
+{
+	"contentManagement": [
+		{
+			"title": "PTE Core 题型一览",
+			"icon": "icon-text",
+			"href": "page/PTECore.html",
+			"spread": false
+		},
+		{
+			"title": "PTE-CLB分数对照",
+			"icon": "icon-caidan",
+			"href": "page/PTECoreCLB.html",
+			"spread": false
+		},
+		{
+			"title": "RS随身听",
+			"icon": "icon-mokuai",
+			"href": "page/RS.html",
+			"spread": false
+		},
+		{
+			"title": "ASQ随身听",
+			"icon": "icon-mokuai",
+			"href": "page/ASQ.html",
+			"spread": false
+		},
+		{
+			"title": "WFD随身听",
+			"icon": "icon-mokuai",
+			"href": "page/WFD.html",
+			"spread": false
+		},
+		{
+			"title": "WFD练习",
+			"icon": "icon-mokuai",
+			"href": "page/WFD_PRACTICE.html",
+			"spread": false
+		},
+		{
+			"title": "RO顺口溜",
+			"icon": "icon-mokuai",
+			"href": "page/RO2.html",
+			"spread": false
+		},
+		{
+			"title": "建议反馈",
+			"icon": "icon-xiugai",
+			"href": "page/comment.html",
+			"spread": false
+		}
+	]
+}
