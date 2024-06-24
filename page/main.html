@@ -131,7 +131,7 @@
 						<div class="layui-timeline-content layui-text">
 							<div class="layui-timeline-title">
 								<h3 class="layui-inline">V1.0</h3>
-								<span class="layui-badge-rim">2024-04-05</span>
+								<span class="layui-badge-rim">2024-04-01</span>
 							</div>
 							<ul>
 								<li>WFD随身听</li>
@@ -146,5 +146,43 @@
 
 	<script type="text/javascript" src="../layui/layui.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript">
+		// 初始化访问量，加入历史统计
+		(function(){
+			var eleList = [
+				{
+					id: 'busuanzi_value_site_pv', 
+					ele: null,
+					initCount: 110960
+				},
+				{
+					id: 'busuanzi_value_site_uv',
+					ele: null,
+					initCount: 1258
+				}
+			]
+
+			for(var i=0;i<eleList.length;i++){
+				var eleObj = eleList[i]
+				eleObj.ele = document.getElementById(eleObj.id)
+				_defineProperty(eleObj,'innerHTML')
+			}
+
+			function _defineProperty(eleObj,key){
+				var ele = eleObj.ele
+				Object.defineProperty(ele,key,{
+					set(originVal){
+						_updateCount(eleObj,originVal)
+					}
+				})
+			}
+
+			function _updateCount(eleObj,originVal){
+				var initCount = eleObj.initCount
+				var ele = eleObj.ele
+				ele.innerText = parseInt(originVal) + initCount
+			}
+		})()
+	</script>
 </body>
 </html>
