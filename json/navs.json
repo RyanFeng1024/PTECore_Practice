@@ -13,6 +13,12 @@
 			"spread": false
 		},
 		{
+			"title": "小分查看、分析",
+			"icon": "icon-look",
+			"href": "page/ScoreCheck.html",
+			"spread": false
+		},
+		{
 			"title": "RS随身听",
 			"icon": "icon-mokuai",
 			"href": "page/RS.html",
