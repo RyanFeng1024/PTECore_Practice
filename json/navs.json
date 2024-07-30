@@ -53,6 +53,12 @@
 			"icon": "icon-xiugai",
 			"href": "page/comment.html",
 			"spread": false
+		},
+		{
+			"title": "打赏记录",
+			"icon": "icon-caidan",
+			"href": "page/donate.html",
+			"spread": false
 		}
 	]
 }
