@@ -1,0 +1,58 @@
+{
+	"contentManagement": [
+		{
+			"title": "Question Types",
+			"icon": "icon-text",
+			"href": "page/PTECore.html",
+			"spread": false
+		},
+		{
+			"title": "PTE Core <-> CLB",
+			"icon": "icon-caidan",
+			"href": "page/PTECoreCLB.html",
+			"spread": false
+		},
+		{
+			"title": "RS MP3",
+			"icon": "icon-mokuai",
+			"href": "page/RS.html?lang=en",
+			"spread": false
+		},
+		{
+			"title": "ASQ MP3",
+			"icon": "icon-mokuai",
+			"href": "page/ASQ.html?lang=en",
+			"spread": false
+		},
+		{
+			"title": "WFD MP3",
+			"icon": "icon-mokuai",
+			"href": "page/WFD.html?lang=en",
+			"spread": false
+		},
+		{
+			"title": "WFD Practise",
+			"icon": "icon-mokuai",
+			"href": "page/WFD_PRACTICE.html?lang=en",
+			"spread": false
+		},
+		{
+			"title": "RO Doggerel",
+			"icon": "icon-mokuai",
+			"href": "page/RO.html?lang=en",
+			"spread": false
+		},
+		{
+			"title": "Feedback",
+			"icon": "icon-xiugai",
+			"href": "page/comment.html?lang=en",
+			"spread": false
+		},
+		{
+			"title": "Donate Record",
+			"icon": "icon-caidan",
+			"href": "page/donate.html?lang=en",
+			"spread": false
+		}
+	]
+}

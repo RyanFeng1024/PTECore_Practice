@@ -4,11 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Zoom">
 	<meta name="keywords" content="PTE, PTE Core, WFD">
-	<meta name="description" content="PTE Core WFD机经练习、随身听">
+	<meta name="description" content="PTE Core, PTE Practise">
 	<meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate">
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Expires" content="0">
-	<title>PTE Core 练习网站 - By Zoom</title>
+	<title>PTE Core Practise - By Zoom</title>
 	<meta name="renderer" content="webkit">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -16,13 +16,13 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="icon" href="favicon.ico">
-	<link rel="stylesheet" href="layui/css/layui.css" media="all" />
-	<link rel="stylesheet" href="css/index.css" media="all" />
+	<link rel="icon" href="/favicon.ico">
+	<link rel="stylesheet" href="/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="/css/index.css" media="all" />
 	<script src="js/common.js"></script>
 	<script type="text/javascript">
 		if(isLocalStorageSupport()) { 
-			window.localStorage.setItem("lang", "cn");
+			window.localStorage.setItem("lang", "en");
 		}
 	</script>
 	<!-- Google tag (gtag.js) -->
@@ -41,32 +41,31 @@
 	<div class="layui-layout layui-layout-admin">
 		<div class="layui-header header">
 			<div class="layui-main mag0">
-				<a href="#" class="logo">PTECore练习</a>
+				<a href="#" class="logo">PTE Core</a>
 				<a href="javascript:;" class="seraph hideMenu icon-caidan"></a>
-				<!-- 顶级菜单 -->
 				<ul class="layui-nav mobileTopLevelMenus" mobile>
 					<li class="layui-nav-item" data-menu="contentManagement">
-						<a href="javascript:;"><i class="seraph icon-caidan"></i><cite>顶部导航</cite></a>
+						<a href="javascript:;"><i class="seraph icon-caidan"></i><cite>Top Menu</cite></a>
 						<dl class="layui-nav-child">
-							<dd class="layui-this" data-menu="contentManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>查看菜单</cite></a></dd>
+							<dd class="layui-this" data-menu="contentManagement"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>Menu</cite></a></dd>
 						</dl>
 					</li>
 				</ul>
 				<ul class="layui-nav topLevelMenus" pc>
 					<li class="layui-nav-item layui-this" data-menu="contentManagement">
-						<a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>顶部导航</cite></a>
+						<a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>Top Menu</cite></a>
 					</li>
 				</ul>
 			    <ul class="layui-nav top_menu">
-					<li class="layui-nav-item lockcms" pc>
-						<a href="/index_en.html"><i class="seraph icon-liulanqi"></i><cite>English</cite></a>
+					<li class="layui-nav-item" pc>
+						<a href="/"><i class="seraph icon-liulanqi"></i><cite>中文</cite></a>
 					</li>
 					<li class="layui-nav-item" id="userInfo">
-						<a href="javascript:;"><img src="images/face.jpg" class="layui-nav-img userAvatar" width="35" height="35"><cite class="adminName">Zoom</cite></a>
-						<dl class="layui-nav-child">
-							<dd pc><a href="javascript:;" class="functionSetting"><i class="layui-icon">&#xe620;</i><cite>功能设定</cite><span class="layui-badge-dot"></span></a></dd>
-							<dd pc><a href="javascript:;" class="changeSkin"><i class="layui-icon">&#xe61b;</i><cite>更换皮肤</cite></a></dd>
-						</dl>
+						<a href="javascript:;"><img src="/images/face.jpg" class="layui-nav-img userAvatar" width="35" height="35"><cite class="adminName">Zoom</cite></a>
+						<!-- <dl class="layui-nav-child">
+							<dd pc><a href="javascript:;" class="functionSetting"><i class="layui-icon">&#xe620;</i><cite>Settings</cite><span class="layui-badge-dot"></span></a></dd>
+							<dd pc><a href="javascript:;" class="changeSkin"><i class="layui-icon">&#xe61b;</i><cite>Change Skin</cite></a></dd>
+						</dl> -->
 					</li>
 				</ul>
 			</div>
@@ -75,7 +74,7 @@
 			<div class="navBar layui-side-scroll" id="navBar">
 				<ul class="layui-nav layui-nav-tree">
 					<li class="layui-nav-item layui-this">
-						<a href="javascript:;" data-url="page/main.html"><i class="layui-icon" data-icon=""></i><cite>首  页</cite></a>
+						<a href="javascript:;" data-url="/page/main.html"><i class="layui-icon" data-icon=""></i><cite>Home</cite></a>
 					</li>
 				</ul>
 			</div>
@@ -84,36 +83,37 @@
 		<div class="layui-body layui-form">
 			<div class="layui-tab mag0" lay-filter="bodyTab" id="top_tabs_box">
 				<ul class="layui-tab-title top_tab" id="top_tabs">
-					<li class="layui-this" lay-id=""><i class="layui-icon">&#xe68e;</i> <cite>首页</cite></li>
+					<li class="layui-this" lay-id=""><i class="layui-icon">&#xe68e;</i> <cite>Home</cite></li>
 				</ul>
 				<ul class="layui-nav closeBox">
 				  <li class="layui-nav-item">
-				    <a href="javascript:;"><i class="layui-icon caozuo">&#xe643;</i> 页面操作</a>
+				    <a href="javascript:;"><i class="layui-icon caozuo">&#xe643;</i> Operations</a>
 				    <dl class="layui-nav-child">
-					  <dd><a href="javascript:;" class="refresh refreshThis"><i class="layui-icon">&#x1002;</i> 刷新当前</a></dd>
-				      <dd><a href="javascript:;" class="closePageOther"><i class="seraph icon-prohibit"></i> 关闭其他</a></dd>
-				      <dd><a href="javascript:;" class="closePageAll"><i class="seraph icon-guanbi"></i> 关闭全部</a></dd>
+					  <dd><a href="javascript:;" class="refresh refreshThis"><i class="layui-icon">&#x1002;</i> Refresh</a></dd>
+				      <dd><a href="javascript:;" class="closePageOther"><i class="seraph icon-prohibit"></i> Close Others</a></dd>
+				      <dd><a href="javascript:;" class="closePageAll"><i class="seraph icon-guanbi"></i> Close All</a></dd>
 				    </dl>
 				  </li>
 				</ul>
 				<div class="layui-tab-content clildFrame">
 					<div class="layui-tab-item layui-show">
-						<iframe src="page/main.html"></iframe>
+						<iframe src="/page/en/main.html"></iframe>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- 底部 -->
 		<div class="layui-footer footer">
-			<p><span>V1.5 Copyright &copy; 2024 <a style="color: blue; font-weight: bold;" href="https://www.xiaohongshu.com/user/profile/6190d9d0000000001000d97c" target="_blank">Zoom</a></span>　　<a onclick="donation()" class="layui-btn layui-btn-danger layui-btn-sm">捐赠作者</a></p>
+			<p><span>V1.5 Copyright &copy; 2024 <a style="color: blue; font-weight: bold;" href="https://www.xiaohongshu.com/user/profile/6190d9d0000000001000d97c" target="_blank">Zoom</a></span>　　<a onclick="donation()" class="layui-btn layui-btn-danger layui-btn-sm">Buy me a coffee</a></p>
 		</div>
 	</div>
 
 	<!-- 移动导航 -->
 	<div class="site-tree-mobile"><i class="layui-icon">&#xe602;</i></div>
 	<div class="site-mobile-shade"></div>
-	<script type="text/javascript" src="layui/layui.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
-	<script type="text/javascript" src="js/cache.js"></script>
+
+	<script type="text/javascript" src="/layui/layui.js"></script>
+	<script type="text/javascript" src="/js/index.js?lang=en"></script>
+	<script type="text/javascript" src="/js/cache.js"></script>
 </body>
 </html>

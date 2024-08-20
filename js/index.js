@@ -9,11 +9,23 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 		element = layui.element;
 		$ = layui.$;
     	layer = parent.layer === undefined ? layui.layer : top.layer;
+		var lang = window.localStorage.getItem("lang");
+		var jsonUrl = lang == "en" ? "/json/navs_en.json" : "/json/navs.json";
 		tab = layui.bodyTab({
-			openTabNum : "50",
-			url : "json/navs.json"
+			openTabNum : "50",  //最大可打开窗口数量
+			url : jsonUrl //获取菜单json地址
 		});
 
+	if(isMobile()) { 
+		var lang = window.localStorage.getItem("lang");
+		if (lang == "en") {
+			layer.open({title: 'Info', btn: ['OK'], content: 'For a better experience, please use computer to access.'});
+		} else {
+			layer.open({content: '为了更好的体验，请使用电脑访问本站点。'});
+		}
+	}
+
+	//通过顶部菜单获取左侧二三级菜单   注：此处只做演示之用，实际开发中通过接口传参的方式获取导航数据
 	function getData(json){
 		$.getJSON(tab.tabConfig.url,function(data){
 			if(json == "contentManagement"){
@@ -122,24 +134,35 @@ function addTab(_this){
 	tab.tabAdd(_this);
 }
 
-function donation(){
+//捐赠弹窗
+function donation() {
+	var lang = window.localStorage.getItem("lang");
+	var alipay = "支付宝";
+	var wechatpay = "微信";
+	if (lang == "en") {
+		alipay = "Alipay";
+		wechatpay = "WeChatPay";
+	}
 	layer.tab({
 		area : ['460px', '650px'],
 		tab : [{
-			title : "微信",
+			title : wechatpay,
 			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='images/wechat.jpg' style='width:400px;'></div>"
 		},{
-			title : "支付宝",
+			title : alipay,
 			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='images/alipay.jpg' style='width:400px;'></div>"
 		},{
 			title : "USDT",
 			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='images/usdt.jpg' style='width:400px;'></div>"
+		},{
+			title : "PayPal",
+			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='images/paypal.jpg' style='width:400px;'></div>"
 		}]
 	})
 }
 
 function showImg(){
-    $.getJSON('json/RO.json', function(json){
+    $.getJSON('/json/RO.json', function(json){
         var res = json;
         layer.photos({
             photos: res,

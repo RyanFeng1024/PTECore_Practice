@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>打赏支持</title>
+	<title>打赏支持 | Donate</title>
 	<meta name="renderer" content="webkit">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="../layui/css/layui.css" media="all" />
 	<link rel="stylesheet" href="../css/public.css" media="all" />
 	<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/common.js"></script>
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-VD6R95ZNN4"></script>
 	<script>
@@ -24,32 +26,59 @@
 	</script>
 	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3182246445348746" crossorigin="anonymous"></script>
+	<style>
+		@keyframes fontColorChange {
+			0%   { color: red; }
+			20%  { color: purple; }
+			40%  { color: blue; }
+			60%  { color: green; }
+			80%  { color: darkcyan; }
+			100% { color: red; }
+		}
+
+		.supportInfo {
+			display: block;
+			font-size: 18px;
+			text-align: center; font-weight: bold;
+			animation: fontColorChange 10s infinite;
+		}
+		.hot_news .WechatPay {
+			color: #07c160;
+		}
+		.hot_news .Alipay {
+			color: #1678ff;
+		}
+	</style>
 </head>
 
 <body class="childrenBody">
-	<blockquote class="layui-elem-quote news_search">
-		<p>开发、维护网站需要人力和财力成本。如果你觉得该网站对你有价值，并愿意支持、鼓励作者，在此感谢各位老板的心意。</p>
-		<p class="layui-blue">打赏行为皆为自愿且金额随意，你的打赏表示了对作者的支持与认可，你的鼓励让我更有动力！</p>
+	<blockquote class="layui-elem-quote news_search" id="forChinese">
+		<p class="sec1">开发、维护网站需要人力和财力成本。如果你觉得该网站对你有价值，并愿意支持、鼓励作者，在此感谢各位老板的心意。</p>
+		<p class="layui-blue sec2">打赏行为皆为自愿且金额随意，你的打赏表示了对作者的支持与认可，你的鼓励让我更有动力！</p>
 		<span id="busuanzi_container_page_pv" style="color: #b3b3b3; font-style: italic;">
-			- 本页面访问量 <span id="busuanzi_value_page_pv"></span> -
+			- <span class="pagePV">本页面访问量</span> <span id="busuanzi_value_page_pv"></span> -
 		</span>
 	</blockquote>
 	<div class="layui-tab layui-tab-brief">
 		<table style="border-collapse: separate;border-spacing: 10px;">
 			<tr align="center">
-				<td><b>微信</b></td>
-				<td><b>支付宝</b></td>
+				<td><b class="WechatPay">微信</b></td>
+				<td><b class="Alipay">支付宝</b></td>
 				<td><b>USDT</b></td>
+				<td><b>PayPal</b></td>
+				<td><b>𝑩𝒖𝒚 𝒎𝒆 𝒂 𝒄𝒐𝒇𝒇𝒆𝒆</b></td>
 			</tr>
 			<tr>
 				<td><img src='/images/wechat.jpg' style='width:300px;'></td>
 				<td><img src='/images/alipay.jpg' style='width:300px;'></td>
 				<td><img src='/images/usdt.jpg' style='width:300px;'></td>
+				<td><img src='/images/paypal.jpg' style='width:300px;'></td>
+				<td><script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="ryan.feng" data-color="#FFDD00" data-emoji="☕"  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script></td>
 			</tr>
 		</table>		
 	</div>
-	<div class="layui-col-lg6 layui-col-md12">
-		<blockquote class="layui-elem-quote title">💰打赏记录</blockquote>
+	<div class="layui-col-lg8 layui-col-md12">
+		<blockquote class="layui-elem-quote title"><span id="donateRecord">💰捐赠记录</span> <span style="" class="supportInfo">❤️感谢各位老板的支持~！ ❤️</span></blockquote>
 		<table class="layui-table mag0" lay-skin="line">
 			<colgroup>
 				<col>
@@ -60,75 +89,101 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<td>捐赠人</td>
-					<td>时间</td>
-					<td>捐赠留言</td>
-					<td>捐赠渠道</td>
-					<td>捐赠金额</td>
+					<td class="donator">捐赠人</td>
+					<td class="donateTime">时间</td>
+					<td class="donateMsg">捐赠留言</td>
+					<td class="channel">捐赠渠道</td>
+					<td class="amount">捐赠金额</td>
 				</tr>
 			</thead>
 			<tbody class="hot_news">
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">*云</td><td>2024-08-08</td><td>-</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">50.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">*达</td><td>2024-08-19</td><td>-</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">30.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">*👸</td><td>2024-08-16</td><td>感谢Zoom哥，网站很好用</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">50.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">*了</td><td>2024-08-19</td><td>谢谢同学</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">50.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">J*i</td><td>2024-08-08</td><td>-</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">1.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">A*s</td><td>2024-08-17</td><td>-</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">6.60</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">*舜</td><td>2024-08-02</td><td>-</td><td>支付宝</td><td style="color: #ff8d00; font-weight: bold;">50.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">*云</td><td>2024-08-16</td><td>-</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">50.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">*宝</td><td>2024-07-27</td><td>-</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">20.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">*👸</td><td>2024-08-16</td><td>感谢Zoom哥，网站很好用</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">50.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">**瑄</td><td>2024-07-26</td><td>-</td><td>支付宝</td><td style="color: #ff8d00; font-weight: bold;">50.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">J*i</td><td>2024-08-08</td><td>-</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">1.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">Z*y</td><td>2024-07-23</td><td>上岸啦，谢谢！</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">50.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">*舜</td><td>2024-08-02</td><td>-</td><td class="Alipay">支付宝</td><td style="color: #ff8d00; font-weight: bold;">50.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">*盼</td><td>2024-07-17</td><td>我用了你做的PTEcore网站，考了个很好的分数，非常感谢！</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">66.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">*宝</td><td>2024-07-27</td><td>-</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">20.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">*爽</td><td>2024-07-09</td><td>-</td><td>支付宝</td><td style="color: #ff8d00; font-weight: bold;">6.66</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">**瑄</td><td>2024-07-26</td><td>-</td><td class="Alipay">支付宝</td><td style="color: #ff8d00; font-weight: bold;">50.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">S*n</td><td>2024-07-05</td><td>-</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">66.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">Z*y</td><td>2024-07-23</td><td>上岸啦，谢谢！</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">50.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">*®</td><td>2024-06-30</td><td>迟来的感谢！</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">20.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">*盼</td><td>2024-07-17</td><td>我用了你做的PTEcore网站，考了个很好的分数，非常感谢！</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">66.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">**怡</td><td>2024-06-30</td><td>-</td><td>支付宝</td><td style="color: #ff8d00; font-weight: bold;">1.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">*爽</td><td>2024-07-09</td><td>-</td><td class="Alipay">支付宝</td><td style="color: #ff8d00; font-weight: bold;">6.66</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">e*a</td><td>2024-06-26</td><td>-</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">50.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">S*n</td><td>2024-07-05</td><td>-</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">66.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">J*U</td><td>2024-06-26</td><td>谢谢zoom哥的网站</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">20.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">*®</td><td>2024-06-30</td><td>迟来的感谢！</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">20.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">A*I</td><td>2024-06-25</td><td>支持一下兄弟事业</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">150.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">**怡</td><td>2024-06-30</td><td>-</td><td class="Alipay">支付宝</td><td style="color: #ff8d00; font-weight: bold;">1.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">*漪</td><td>2024-06-25</td><td>感谢分享！</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">100.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">e*a</td><td>2024-06-26</td><td>-</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">50.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">**云</td><td>2024-06-24</td><td>-</td><td>支付宝</td><td style="color: #ff8d00; font-weight: bold;">66.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">J*U</td><td>2024-06-26</td><td>谢谢zoom哥的网站</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">20.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">M*s</td><td>2024-06-24</td><td>来自Luka，感谢你的付出和努力💪</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">100.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">A*I</td><td>2024-06-25</td><td>支持一下兄弟事业</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">150.00</td>
 				</tr>
 				<tr>
-					<td align="left" style="color: #ff8d00; font-weight: bold;">*h</td><td>2024-06-23</td><td>支持</td><td>微信</td><td style="color: #ff8d00; font-weight: bold;">1.00</td>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">*漪</td><td>2024-06-25</td><td>感谢分享！</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">100.00</td>
 				</tr>
-				<tr><td colspan="5" style="text-align: center; color: #ccc;">感谢各位老板的支持~！ 🫡</td></tr>
+				<tr>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">**云</td><td>2024-06-24</td><td>-</td><td class="Alipay">支付宝</td><td style="color: #ff8d00; font-weight: bold;">66.00</td>
+				</tr>
+				<tr>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">M*s</td><td>2024-06-24</td><td>来自Luka，感谢你的付出和努力💪</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">100.00</td>
+				</tr>
+				<tr>
+					<td align="left" style="color: #ff8d00; font-weight: bold;">*h</td><td>2024-06-23</td><td>支持</td><td class="WechatPay">微信</td><td style="color: #ff8d00; font-weight: bold;">1.00</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
+	
+	<script type="text/javascript">
+		var lang = GetQueryString("lang");
+		if (lang == "en") {
+			$("title").text("Donate");
+			$(".WechatPay").text("WechatPay");
+			$(".Alipay").text("Alipay");
+			$(".supportInfo").text("❤️Thank you for your support~! ❤️");
+			$("#donateRecord").text("💰Donate Record");
+			$(".donator").text("Donator");
+			$(".donateTime").text("Donate Time");
+			$(".donateMsg").text("Message");
+			$(".channel").text("Channel");
+			$(".amount").text("Amount");
+			$(".sec1").text("Developing and maintaining a website requires human and financial resources. If you think this website is valuable to you and are willing to support and encourage the author, I would like to thank all the bosses for your kindness.");
+			$(".sec2").html("Donations are not mandatory, and the amount of donations is decided by the donors. Any amount of your donations is a great support and recognition for the author. <br />Your encouragement makes me more motivated to stick with it, even though I no longer need to take PTE Core exam.");
+			$(".pagePV").text("This page PV");
+		}
+	</script>
 </body>
-
 </html>

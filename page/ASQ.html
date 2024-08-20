@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/css/style.css">
 	<script src="/js/jquery.min.js"></script>
+	<script src="/js/common.js"></script>
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-VD6R95ZNN4"></script>
 	<script>
@@ -29,7 +30,8 @@
 <body class="childrenBody">
 	
 	<div class="container" style="height: 500px !important;">
-		<div class="lrc" style="margin-top: 50px !important;">
+		<div class="lrc" style="margin-top: 30px !important;">
+			<p id="id" style="margin-bottom: 20px;"></p>
 			<p id="content" style="font-size: 24px;"></p>
 			<p id="translate"></p>
 		</div>
@@ -37,23 +39,25 @@
 		<div class="play_pause" style="bottom: 0px;">
 			<div style="display: block;width: 100%;height: 46px;line-height: 46px;border: none;">
 				<select id="playType" onchange="changeType()">
-					<option value="1">顺序播放</option>
-					<option value="2">随机播放</option>
+					<option value="1" class="order">顺序播放</option>
+					<option value="2" class="random">随机播放</option>
 				</select>
 			</div>
 			<span style="margin-right: 8px;">
-				循环
+				<span class="loop">循环</span>
 				<select id="loop" onchange="changeLoop()">
 					<option value="1">1x</option>
 					<option value="2">2x</option>
 					<option value="3">3x</option>
+					<option value="5">5x</option>
+					<option value="10">10x</option>
 				</select>
 			</span>
 			<button class="fa fa-step-backward fa-2x track"></button>
 			<button class="fa fa-play-circle-o fa-4x pause" title="播放/暂停"></button>
 			<button class="fa fa-step-forward fa-2x next"></button>
 			<span style="margin-left: 8px;">
-				间隔
+				<span class="interval">间隔</span>
 				<select id="interval" onchange="changeInterval()">
 					<option value="1">1s</option>
 					<option value="2">2s</option>
@@ -68,5 +72,15 @@
 	
 	<script type="text/javascript" src="../layui/layui.js"></script>
 	<script type="text/javascript" src="/js/play.js"></script>
+	<script type="text/javascript">
+		var lang = GetQueryString("lang");
+		if (lang == "en") {
+			$("title").text("ASQ mp3 - by Zoom");
+			$(".order").text("Play in order");
+			$(".random").text("Play in random");
+			$(".loop").text("Loop");
+			$(".interval").text("Interval");
+		}
+	</script>
 </body>
 </html>

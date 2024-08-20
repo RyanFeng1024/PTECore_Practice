@@ -1,9 +1,3 @@
-/*
-	@Author: 驊驊龔頾
-	@Time: 2017-10
-	@Tittle: bodyTab
-	@Description: 点击对应按钮添加新窗口
-*/
 var tabFilter,menu=[],liIndex,curNav,delMenu,
     changeRefreshStr = window.sessionStorage.getItem("changeRefresh");
 layui.define(["element","jquery"],function(exports){
@@ -80,11 +74,15 @@ layui.define(["element","jquery"],function(exports){
         }
         return ulHtml;
     }
+
+	var lang = window.localStorage.getItem("lang");
+	var homeStr = lang == "en" ? "Home" : "首页"
+
 	//获取二级菜单数据
 	Tab.prototype.render = function() {
 		//显示左侧菜单
 		var _this = this;
-		$(".navBar ul").html('<li class="layui-nav-item layui-this"><a data-url="page/main.html"><i class="layui-icon" data-icon=""></i><cite>首页</cite></a></li>').append(_this.navBar(dataStr)).height($(window).height()-210);
+		$(".navBar ul").html('<li class="layui-nav-item layui-this"><a data-url="page/main.html"><i class="layui-icon" data-icon=""></i><cite>'+homeStr+'</cite></a></li>').append(_this.navBar(dataStr)).height($(window).height()-210);
 		element.init();  //初始化页面元素
 		$(window).resize(function(){
 			$(".navBar").height($(window).height()-210);
@@ -346,7 +344,7 @@ layui.define(["element","jquery"],function(exports){
 
 	//关闭其他
 	$(".closePageOther").on("click",function(){
-		if($("#top_tabs li").length>2 && $("#top_tabs li.layui-this cite").text()!="首页"){
+		if($("#top_tabs li").length>2 && $("#top_tabs li.layui-this cite").text()!=homeStr){
 			var menu = JSON.parse(window.sessionStorage.getItem("menu"));
 			$("#top_tabs li").each(function(){
 				if($(this).attr("lay-id") != '' && !$(this).hasClass("layui-this")){
@@ -360,7 +358,7 @@ layui.define(["element","jquery"],function(exports){
 					}
 				}
 			})
-		}else if($("#top_tabs li.layui-this cite").text()=="首页" && $("#top_tabs li").length>1){
+		}else if($("#top_tabs li.layui-this cite").text()==homeStr && $("#top_tabs li").length>1){
 			$("#top_tabs li").each(function(){
 				if($(this).attr("lay-id") != '' && !$(this).hasClass("layui-this")){
 					element.tabDelete("bodyTab",$(this).attr("lay-id")).init();
