@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://www.pte-core.com/sitemap.xml
