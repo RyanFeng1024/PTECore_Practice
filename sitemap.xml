@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url><loc>http://www.pte-core.com/</loc><priority>1.00</priority></url>
-<url><loc>http://www.pte-core.com/index_en.html</loc><priority>0.85</priority></url>
-<url><loc>http://www.pte-core.com/page/main.html</loc><priority>0.85</priority></url>
-<url><loc>http://www.pte-core.com/page/en/main.html</loc><priority>0.69</priority></url>
-<url><loc>http://www.pte-core.com/page/donate.html</loc><priority>0.69</priority></url>
-<url><loc>http://www.pte-core.com/page/donate.html?lang=en</loc><priority>0.56</priority></url>
-<url><loc>http://www.pte-core.com/page/ASQ.html</loc><priority>0.69</priority></url>
-<url><loc>http://www.pte-core.com/page/comment.html</loc><priority>0.69</priority></url>
-<url><loc>http://www.pte-core.com/page/PTECore.html</loc><priority>0.69</priority></url>
-<url><loc>http://www.pte-core.com/page/PTECoreCLB.html</loc><priority>0.69</priority></url>
-<url><loc>http://www.pte-core.com/page/RO.html</loc><priority>0.69</priority></url>
-<url><loc>http://www.pte-core.com/page/RO2.html</loc><priority>0.69</priority></url>
-<url><loc>http://www.pte-core.com/page/RS.html</loc><priority>0.69</priority></url>
-<url><loc>http://www.pte-core.com/page/ScoreCheck.html</loc><priority>0.69</priority></url>
-<url><loc>http://www.pte-core.com/page/WFD.html</loc><priority>0.69</priority></url>
-<url><loc>http://www.pte-core.com/page/WFD_PRACTICE.html</loc><priority>0.69</priority></url>
+<url><loc>http://pte-core.com/</loc><priority>1.00</priority></url>
+<url><loc>http://pte-core.com/index_en.html</loc><priority>0.85</priority></url>
+<url><loc>http://pte-core.com/page/main.html</loc><priority>0.85</priority></url>
+<url><loc>http://pte-core.com/page/en/main.html</loc><priority>0.69</priority></url>
+<url><loc>http://pte-core.com/page/donate.html</loc><priority>0.69</priority></url>
+<url><loc>http://pte-core.com/page/donate.html?lang=en</loc><priority>0.76</priority></url>
+<url><loc>http://pte-core.com/page/ASQ.html</loc><priority>0.69</priority></url>
+<url><loc>http://pte-core.com/page/comment.html</loc><priority>0.69</priority></url>
+<url><loc>http://pte-core.com/page/PTECore.html</loc><priority>0.69</priority></url>
+<url><loc>http://pte-core.com/page/PTECoreCLB.html</loc><priority>0.69</priority></url>
+<url><loc>http://pte-core.com/page/RO.html</loc><priority>0.69</priority></url>
+<url><loc>http://pte-core.com/page/RO2.html</loc><priority>0.69</priority></url>
+<url><loc>http://pte-core.com/page/RS.html</loc><priority>0.69</priority></url>
+<url><loc>http://pte-core.com/page/ScoreCheck.html</loc><priority>0.69</priority></url>
+<url><loc>http://pte-core.com/page/WFD.html</loc><priority>0.69</priority></url>
+<url><loc>http://pte-core.com/page/WFD_PRACTICE.html</loc><priority>0.69</priority></url>
 </urlset>
  
